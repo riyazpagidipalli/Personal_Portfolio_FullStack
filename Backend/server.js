@@ -15,6 +15,56 @@ const dbConfig = {
   connectString: "localhost/XEPDB1" // service name or TNS
 };
 
+// 🟢 API route to get all goodreads data
+app.get('/api/books', async (request, response) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection(dbConfig);
+    let jwtToken;
+    const authHeader=request.headers["authorization"];
+    if (authHeader != undefined){
+      jwtToken=authHeader.split(" ")[1]
+    if (jwtToken===undefined){
+      response.status(401);
+    }else{
+      jwt.verify(jwtToken,"qwertyuiop",async(error,user)=>{
+        if(error){
+          response.status(401);
+          response.send("Invlid JWT Token ");
+        }else{
+
+          const result = await connection.execute(`SELECT title,
+    authorId,
+    rating,
+    ratingCount,
+    reviewCount
+     FROM goodreads ORDER BY authorId`,[],{ outFormat: oracledb.OUT_FORMAT_OBJECT });
+
+
+    console.log('Details Of goodreads:');
+    console.table(result.rows);
+    response.json(result.rows); 
+
+        }
+
+      });
+    }
+    }
+      // send the rows as JSON
+  } catch (err) {
+    console.error(err);
+    response.status(500).send('Database error');
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  }
+});
+
 
 //API route to login 
 app.post("/login", async (request, response) => {
