@@ -10,9 +10,9 @@ const jwt = require("jsonwebtoken");
 
 // 🔐 Oracle Database Connection Configuration
 const dbConfig = {
-  user: "goodreads",        // your Oracle username
-  password: "Riyaz8688557396",   // your Oracle password
-  connectString: "localhost/XEPDB1" // service name or TNS
+  user: "",        // your Oracle username
+  password: "",   // your Oracle password
+  connectString: "" // service name or TNS
 };
 
 // 🟢 API route to get all goodreads data
