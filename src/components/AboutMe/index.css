@@ -1,0 +1,197 @@
+/* .cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.cart-img {
+  width: 150px;
+} */
+  /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            
+        }
+
+        body {
+            /* background: linear-gradient(135deg,rgba(0, 0, 0, 0.45)); */
+            color: #333;
+            line-height: 1.6;
+           
+        }
+
+        /* Container */
+        .container {
+          /* margin-top: 500px; */
+            max-width: 1000px;
+            margin: auto;
+            padding: 150px 20px;
+        }
+        .headingh1{
+            margin-top: 60px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: black;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: black;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        /* .profile-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card img:hover {
+            transform: scale(1.1);
+        } */
+
+        .profile-card h2 {
+            font-size: 2rem;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .profile-card p {
+            color: black;
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .skill-card {
+            background: silver;
+            backdrop-filter: blur(8px);
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin: 15px;
+            flex: 1 1 200px;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.35);
+        }
+        /* 🌍 Footer Section */
+footer {
+  text-align: center;
+  margin-top: 10px;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #fafafa, #f0f0f0);
+  color: #1e293b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  border-top: 2px solid #e0e0e0;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+/* 📎 Footer Links */
+footer a {
+  color: #1e293b;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* ✨ Hover Effect */
+footer a:hover {
+  color: #d0b200;
+  transform: translateY(-2px);
+}
+
+/* 🎚️ Animated underline */
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #d0b200;
+  transition: width 0.3s ease-in-out;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* 🧱 Responsive Footer */
+@media screen and (max-width: 768px) {
+  footer {
+    font-size: 0.85rem;
+    padding: 30px 15px;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 8px;
+  }
+}
+
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {opacity: 0; transform: translateY(-50px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes fadeInUp {
+            0% {opacity: 0; transform: translateY(50px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+      
